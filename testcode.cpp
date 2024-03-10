@@ -2,13 +2,20 @@
 #include<math.h>
 using namespace std;
 int main(){
-    int number=5,mask=0;
-    //creating mask !!
-    while (number!=0)
-    {
-        mask=(mask<<1)|1;
-        number=number>>1;
+    int number=1;
+    while(true){
+        // cout<<"enter the number";
+        switch (number)
+        {
+        case 1:
+            cout<<"number is 1";
+            break;
+        
+        default:
+            cout<<"this is default case ! "<<endl;
+            exit(0);
+            break;
+        }
     }
-    cout<<mask;
     return 0;
 }
