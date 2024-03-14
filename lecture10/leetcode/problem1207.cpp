@@ -5,7 +5,7 @@ int main(){
     int size = sizeof(arr)/sizeof(int);
     //doing the 2001 and not 2000 because if we do that and input is -1000 it will be index out of bound !
     int counting[2001]={0};
-    for(int i=0;i<arr.size();i++){
+    for(int i=0;i<size;i++){
         counting[(1000)+arr[i]]++;
     }
     int countOfnonZero=0;
