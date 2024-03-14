@@ -3,6 +3,7 @@ using namespace std;
 int main(){
     int arr[]={1,2,2,1,1,3};
     int size = sizeof(arr)/sizeof(int);
+    //doing the 2001 and not 2000 because if we do that and input is -1000 it will be index out of bound !
     int counting[2001]={0};
     for(int i=0;i<arr.size();i++){
         counting[(1000)+arr[i]]++;
