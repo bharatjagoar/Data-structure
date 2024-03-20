@@ -3,16 +3,19 @@
 using namespace std;
 //the solution is s
 int main(){
-    vector <int> vector1 = {4,3,2,7,8,2,3,1};
-    
-    int size = vector1.size();
+    vector <int> arr = {4,3,2,7,8,2,3,1}, resultant;
+    int size = arr.size();
     for (int i = 0; i < size; i++)
     {
-        cout<<vector1[i]<<"\t";
-        cout<<vector1[vector1[i]-1]<<endl;
-                
+        if(arr[i]>0){
+            if ()
+            {
+                /* code */
+            }
+            
+            arr[arr[i]-1] = arr[arr[i]]*-1;
+        }
     }
-    
     
     return 0;
 }
