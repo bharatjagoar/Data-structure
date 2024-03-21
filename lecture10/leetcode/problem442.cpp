@@ -1,20 +1,51 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-//the solution is s
 int main(){
-    vector <int> arr = {4,3,2,7,8,2,3,1}, resultant;
-    int size = arr.size();
-    for (int i = 0; i < size; i++)
+    vector<int> nums = {10,2,5,10,9,1,1,4,3,7};
+    cout<<nums.size()<<endl;
+    vector<int> result;
+    int mod;
+    for (int i = 0; i < nums.size(); i++)
     {
-        if(arr[i]>0){
-            if ()
+        if(nums[i]>0){
+            // nums[nums[i]-1]=nums[nums[i]-1]*(-1);
+            if (nums[nums[i]-1]>0)
             {
-                /* code */
+                nums[nums[i]-1]=nums[nums[i]-1]*(-1);
+            }else{
+                if (nums[i]>0)
+                {
+                    result.push_back(nums[i]);
+                }else{
+                    result.push_back(nums[i]*-1);
+                }
+                
+                
+                cout<<nums[i]<<"\t";
             }
             
-            arr[arr[i]-1] = arr[arr[i]]*-1;
+        }else{
+            mod = (nums[i]*-1)-1;
+            if(nums[mod]>0){
+                nums[mod] = nums[mod]*-1;
+            }else{
+                if (nums[i]>0)
+                {
+                    result.push_back(nums[i]);
+                }else{
+                    result.push_back(nums[i]*-1);
+                }
+                
+                result.push_back(nums[i]);
+                cout<<nums[i]<<"\t";
+            }
         }
+    }
+    cout<<endl;
+    for (int i = 0; i < result.size(); i++)
+    {
+        cout<<result[i]<<"\t";
     }
     
     return 0;
