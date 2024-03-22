@@ -33,5 +33,6 @@ int main(){
     printSet(s1);
     s1.erase(78);//throught value
     printSet(s1);
+    cout<<s1.size()<<"this is size"<<endl;
     return 0;
 }
