@@ -2,32 +2,28 @@
 using namespace std;
 #include<bits/stdc++.h>
 int BinarySearch(int* arr,int high,int low,int key){
-    int mid,index;
-    for (int i = 0; i < high; i++)
-    {
-        mid =(low+high)/2;
-        /* code */
-        if(high==low){
-            cout<<"equal"<<endl;
-            return low;
-        }else if(key<arr[mid]){
-            cout<<"less then "<<endl;
-            high=mid;
-            int index=BinarySearch(arr,high,low,key);
-        }else{
-            cout<<"greater"<<endl;
-            low=mid;
-            int index = BinarySearch(arr,high,low,key);
-        }
+    int mid,index=0;
+    mid = ( low + high )/2;
+
+    if(arr[mid]==key){
+        return mid;
+    }else if(key>arr[mid]){
+        low=mid+1;
+        int index = BinarySearch(arr,high,low,key);
+        return index;
     }
-    return index;
+    else{
+        high = mid;
+        int index = BinarySearch(arr,high,low,key);
+        return index;
+    }
+    
+    // return index;
 }
 int main(){
-    int arr[]={4,8,16,22,34};
-    int key = 4;
-    int low=0,high=sizeof(arr)/sizeof(int)-1;
-    // cout<<high<<arr[high];
-    // cout<<"hello world !! ";
+    int arr[]={2, 4, 6, 8, 10, 12, 14};
+    int key = 6;
+    int low = 0 , high = sizeof(arr) / sizeof(int) - 1;
     int index=BinarySearch(arr,high,low,key);
     cout<<index<<endl;
     return 0;
