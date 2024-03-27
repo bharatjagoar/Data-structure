@@ -6,14 +6,21 @@ int BinarySearch(int* arr,int high,int low,int key){
     mid = ( low + high )/2;
 
     if(arr[mid]==key){
+        cout<<"arr[mid]==key"<<endl;
         return mid;
-    }else if(key>arr[mid]){
-        low=mid+1;
+    }else if(high==low){
+        cout<<"high==low"<<endl;
+        if(key!=arr[high])
+        return -1;
+    }
+    else if(key<arr[mid]){
+        cout<<"key<arr[mid]"<<endl;
+        high = mid;
         int index = BinarySearch(arr,high,low,key);
         return index;
-    }
-    else{
-        high = mid;
+    }else if(key>arr[mid]){
+        cout<<"key>arr[mid]"<<endl;
+        low=mid+1;
         int index = BinarySearch(arr,high,low,key);
         return index;
     }
@@ -21,10 +28,13 @@ int BinarySearch(int* arr,int high,int low,int key){
     // return index;
 }
 int main(){
-    int arr[]={2, 4, 6, 8, 10, 12, 14};
-    int key = 6;
+    int arr[]={2, 4, 6, 8, 10, 12,15};
+    int key = 15;
     int low = 0 , high = sizeof(arr) / sizeof(int) - 1;
     int index=BinarySearch(arr,high,low,key);
+    if(index>=0)
     cout<<index<<endl;
+    else
+    cout<<"does not exist !! "<<endl;
     return 0;
 }
