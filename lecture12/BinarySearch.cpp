@@ -6,20 +6,20 @@ int BinarySearch(int* arr,int high,int low,int key){
     mid = ( low + high )/2;
 
     if(arr[mid]==key){
-        cout<<"arr[mid]==key"<<endl;
+        // cout<<"arr[mid]==key"<<endl;
         return mid;
     }else if(high==low){
-        cout<<"high==low"<<endl;
+        // cout<<"high==low"<<endl;
         if(key!=arr[high])
         return -1;
     }
     else if(key<arr[mid]){
-        cout<<"key<arr[mid]"<<endl;
+        // cout<<"key<arr[mid]"<<endl;
         high = mid;
         int index = BinarySearch(arr,high,low,key);
         return index;
     }else if(key>arr[mid]){
-        cout<<"key>arr[mid]"<<endl;
+        // cout<<"key>arr[mid]"<<endl;
         low=mid+1;
         int index = BinarySearch(arr,high,low,key);
         return index;
