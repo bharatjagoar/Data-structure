@@ -28,8 +28,8 @@ int BinarySearch(int* arr,int high,int low,int key){
     // return index;
 }
 int main(){
-    int arr[]={2, 4, 6, 8, 10, 12,15};
-    int key = 15;
+    int arr[]={4,5,6,7,0,1,2};
+    int key = 0;
     int low = 0 , high = sizeof(arr) / sizeof(int) - 1;
     int index=BinarySearch(arr,high,low,key);
     if(index>=0)
