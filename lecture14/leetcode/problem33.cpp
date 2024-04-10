@@ -4,11 +4,13 @@ using namespace std;
 
 int findpivot(vector<int>arr){
     int low=0,high = arr.size()-1;
-    int mid = (low+high) / 2 ;
+    cout<<high<<"this is high"<<endl;
+    int mid = high + (low-high) / 2 ;
+    cout<<mid<<endl;
     while (high>low)
     {
         // cout<<"hello world"<<endl;
-        if(arr[mid]>arr[0]){
+        if(arr[mid]>arr[high]){
             low = mid+1;
         }else{
             high = mid;
@@ -43,12 +45,12 @@ int binarySearch(vector<int> arr,int key,int start,int end){
     return -1;
 }
 int main(){
-    vector <int> arr={4,5,6,7,0,1,2};
-    int target=5;
+    vector <int> arr={3,1};
+    int target=1;
     int pivot = findpivot(arr),indexOfkey;
     int size = arr.size()-1;
     cout<<"this is pivot ::"<<pivot<<endl;
-    if(arr[size]>target){
+    if(arr[size]>=target){
         indexOfkey = binarySearch(arr,target,pivot,size);
         cout<<"herer";
         cout<<indexOfkey<<endl;
