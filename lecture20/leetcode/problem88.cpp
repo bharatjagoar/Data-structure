@@ -1,27 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-#include<bits/stdc++.h>
-int main(){
-    vector <int> nums1={1,3,4,5};
-    int m = nums1.size();
-    vector <int> nums2 = {2,3,6,8,10},arr;
+#include <bits/stdc++.h>
 
-    int n = nums2.size();
-    int count=0;
-    for(int i=0;i<m+n;i++){
-        if(i<m){
-            arr.push_back(nums1[i]);
-        }else{
-            arr.push_back(nums2[count]);
-            count++;
-        }
-    }
-    for(auto x:arr){
-        cout<<x<<"\t";
-    }cout<<endl;
-    sort(arr.begin(),arr.end());
-    for(auto x:arr){
-        cout<<x<<"\t";
-    }
+void mergeSortedarray(vector<int> &arr1, int m, vector<int> arr2, int n)
+{
+        
+}
+
+int main()
+{
+    vector<int> nums1 = {1, 2, 3, 0, 0, 0};
+    int m = nums1.size();
+    vector<int> nums2 = {2, 5, 6}, arr;
+    mergeSortedarray(nums1, 3, nums2, 3);
+    // cout << nums1[0] << endl;
     return 0;
 }
